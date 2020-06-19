@@ -11,12 +11,10 @@ def find_empty(row, column):
 
 # Check if the number in this row and column is valid, returns True if it is
 def check_valid(row, column):
-  i = 0
   # Check the numbers in the row
-  for num in table[row]:
+  for i, num in enumerate(table[row]):
     if i != column and num == table[row][column]:
       return False
-    i += 1
 
   # Check the numbers in the column
   for index in range(9):
@@ -105,7 +103,7 @@ board3 = [
   [0, 0, 4, 0, 0, 6, 0, 0, 3]
 ]
 
-table = board3.copy()
+table = board1.copy()
 
 solve()
 pp = pprint.PrettyPrinter(width=29, compact=True)
